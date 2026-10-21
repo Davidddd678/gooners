@@ -26,8 +26,8 @@ palavras=[
 visitas= 0
 @app.route('/')
 def index():
-    visitas= visitas+1
-    return jsonify({"visitas":visitas})
+    visita= visitas+1
+    return jsonify({"visitas":visita})
     return 'Hello my little friends'
 
 @app.route('/palavras')
