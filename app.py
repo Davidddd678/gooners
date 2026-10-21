@@ -23,14 +23,17 @@ palavras=[
    },
 ]
 
-
+visitas= 0
 @app.route('/')
 def index():
+    visitas= visitas+1
+    return jsonify({"visitas":visitas})
     return 'Hello my little friends'
 
 @app.route('/palavras')
 def piada():
     return random.choice(palavras)
+
 
 @app.route('/palavras/<int:id>')
 def palavras_id(id):
