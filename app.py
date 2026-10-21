@@ -33,7 +33,7 @@ def piada():
     return random.choice(palavras)
 
 @app.route('/palavras/<int:id>')
-def piada_id(id):
+def palavras_id(id):
     if id < 1 or id > len(palavras):
         return'Essa piada não existe good lad, miaw,',404
     return piadas[id-1]
