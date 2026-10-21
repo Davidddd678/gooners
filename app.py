@@ -11,12 +11,12 @@ palavras=[
        "nome": "le David"
    },
    {
-        "id":2
+        "id":2,
         "palavras": "le verity",
         "nome": "le David"
    },
    {
-        "id":3
+        "id":3,
         "palavras": "Gambare",
         "nome": "le David"
    },
