@@ -3,20 +3,37 @@ import random
 
 app = Flask(__name__)
 
-piadas=[" Porque é a galinha atravessou a estrada? Para chegar ao outro lado",
-        " Qual é o animal mais velho do mundo, não sei? Nem eu ..."]
+palavras=[
+
+   {
+       "id":1,
+       "palavras": "goon",
+       "nome": "le David"
+   },
+   {
+        "id":2
+        "palavras": "le verity",
+        "nome": "le David"
+   },
+   {
+        "id":3
+        "palavras": "Gambare",
+        "nome": "le David"
+   },
+]
+
 
 @app.route('/')
 def index():
     return 'Hello my little friends'
 
-@app.route('/piada')
+@app.route('/palavras')
 def piada():
-    return random.choice(piadas)
+    return random.choice(palavras)
 
-@app.route('/piada/<int:id>')
+@app.route('/palavras/<int:id>')
 def piada_id(id):
-    if id < 1 or id > len(piadas):
+    if id < 1 or id > len(palavras):
         return'Essa piada não existe good lad, miaw,',404
     return piadas[id-1]
 app.run(host="0.0.0.0", port=8080)
