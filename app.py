@@ -1,11 +1,15 @@
-from flask import Flask,jsonify,request
-
+from flask import Flask,render_template
+import random 
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return 'Hello my little friends'
+    curiosidade_selecionada= ["eu gosto de goon", " eu tenho 15 anos", " eu adoro pessoas gulosas"]
+    
+    curiosidade = random.choice(curiosidade_selecionada)
 
-app.run(host="0.0.0.0", port=8080)
+    return render_template("index.html", visitas= 1, curiosidade=curiosidade )
+
+app.run(host="0.0.0.0", port=8080, debug=True)
